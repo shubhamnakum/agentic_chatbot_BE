@@ -1,0 +1,12 @@
+services:
+  backend:
+    container_name: backend_dev
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    env_file:
+      - .env
+    ports:
+      - '8000:8000'
+    volumes:
+      - .:/app # Mounts code for live reloading in dev mode
